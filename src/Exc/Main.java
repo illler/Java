@@ -27,7 +27,7 @@ public class Main {
                     System.out.println("Введите название таблицы");
                     e1.setName_table(sc.next());
 
-                    while (!check.equals("10")){
+                    while (!check.equals("12")){
                         System.out.println("""
                     1. Вывести все таблицы из MySQL.
                     2. Создать таблицу в MySQL.
@@ -37,7 +37,10 @@ public class Main {
                     6. Деление чисел, результат сохранить в MySQL с последующим выводом в консоль.
                     7. Деление чисел по модулю (остаток), результат сохранить в MySQL с последующим выводом в консоль.
                     8. Возведение числа в модуль, результат сохранить в MySQL с последующим выводом в консоль.
-                    9. Возведение числа в степень, результат сохранить в MySQL с последующим выводом в консоль.""");
+                    9. Возведение числа в степень, результат сохранить в MySQL с последующим выводом в консоль.
+                    10. Удаление таблицы по имени.
+                    11. Сохранение данных в Excel.
+                    12. Выход из программыю""");
                         check = sc.next();
                         try {
                             x = Integer.parseInt(check);
@@ -54,6 +57,8 @@ public class Main {
                             case 7 -> e1.exc_1_5();
                             case 8 -> e1.exc_1_6();
                             case 9 -> e1.exc_1_7();
+                            case 10 -> e1.drop("jdbc:mysql://localhost/Exc1");
+                            case 11 -> e1.excel("jdbc:mysql://localhost/Exc1");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
@@ -65,7 +70,7 @@ public class Main {
                     String check = "";
                     System.out.println("Введите название таблицы");
                     e2.setName_table(sc.next());
-                    while (!check.equals("8")){
+                    while (!check.equals("9")){
                         System.out.println("""
                     1. Вывести все таблицы из MySQL.
                     2. Создать таблицу в MySQL.
@@ -77,7 +82,8 @@ public class Main {
                     6. Сравнить две ранее введенные строки, результат сохранить в MySQL с последующим выводом в
                     консоль.
                     7. Удалить таблицу.
-                    8. Выход из программы
+                    8. Сохранить данные в Excel.
+                    9. Выход из программы
                     """);
                         check = sc.next();
                         try {
@@ -93,7 +99,8 @@ public class Main {
                             case 4 -> e2.exc_2_1();
                             case 5 -> e2.exc_2_2();
                             case 6 -> e2.exc_2_3();
-                            case 7 -> e2.drop();
+                            case 7 -> e2.drop("jdbc:mysql://localhost/Exc2");
+                            case 8 -> e2.excel("jdbc:mysql://localhost/Exc2");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
@@ -125,8 +132,8 @@ public class Main {
                             case 1 -> e3.sql_show("jdbc:mysql://localhost/Exc3");
                             case 2 -> e3.sql_create();
                             case 3 -> e3.case_3();
-                            case 4 -> e3.drop();
-                            case 5 -> e3.excel();
+                            case 4 -> e3.drop("jdbc:mysql://localhost/Exc3");
+                            case 5 -> e3.excel("jdbc:mysql://localhost/Exc3");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
@@ -162,8 +169,8 @@ public class Main {
                             case 1 -> e4.sql_show("jdbc:mysql://localhost/Exc4");
                             case 2 -> e4.sql_create();
                             case 3, 4, 5, 6 -> e4.all_section(x);
-                            case 7 -> e4.excel();
-                            case 8 -> e4.drop();
+                            case 7 -> e4.excel("jdbc:mysql://localhost/Exc4");
+                            case 8 -> e4.drop("jdbc:mysql://localhost/Exc4");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
@@ -195,8 +202,8 @@ public class Main {
                             case 1 -> exc_5.sql_show("jdbc:mysql://localhost/Exc5");
                             case 2 -> exc_5.sql_create();
                             case 3, 4 -> exc_5.section(x);
-                            case 5 -> exc_5.excel();
-                            case 6 -> exc_5.drop();
+                            case 5 -> exc_5.excel("jdbc:mysql://localhost/Exc5");
+                            case 6 -> exc_5.drop("jdbc:mysql://localhost/Exc5");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
@@ -227,8 +234,8 @@ public class Main {
                             case 1 -> exc_6.sql_show("jdbc:mysql://localhost/Exc6");
                             case 2 -> exc_6.sql_create();
                             case 3, 4 -> exc_6.section(x);
-                            case 5 -> exc_6.excel();
-                            case 6 -> exc_6.drop();
+                            case 5 -> exc_6.excel("jdbc:mysql://localhost/Exc6");
+                            case 6 -> exc_6.drop("jdbc:mysql://localhost/Exc6");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
@@ -258,8 +265,8 @@ public class Main {
                             case 1 -> exc_7.sql_show("jdbc:mysql://localhost/Exc7");
                             case 2 -> exc_7.sql_create();
                             case 3 -> exc_7.section();
-                            case 4 -> exc_7.drop();
-                            case 5 -> exc_7.excel();
+                            case 4 -> exc_7.drop("jdbc:mysql://localhost/Exc7");
+                            case 5 -> exc_7.excel("jdbc:mysql://localhost/Exc7");
                         }
                     }
                     System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
