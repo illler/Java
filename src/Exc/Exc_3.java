@@ -77,14 +77,14 @@ class Exc_3 extends Exc_all{
         }
         System.out.println();
     }
+
     @Override
-    public void drop() throws SQLException {
-        String mysqlUrl1 = "jdbc:mysql://localhost/Exc3";
-        super.drop(mysqlUrl1);
+    public void drop(String a) throws SQLException {
+        super.drop(a);
     }
 
     @Override
-    public void excel() throws ClassNotFoundException, SQLException, IOException {
-        super.excel();
+    public void excel(String url) throws ClassNotFoundException, SQLException, IOException {
+        super.excel(url);
     }
 }
