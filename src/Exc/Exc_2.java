@@ -1,6 +1,7 @@
 package Exc;
 
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.Arrays;
 
@@ -97,8 +98,13 @@ class Exc_2 extends Exc_all{
     }
 
     @Override
-    public void drop() throws SQLException {
-        String mysqlUrl1 = "jdbc:mysql://localhost/Exc2";
-        super.drop(mysqlUrl1);
+    public void excel(String mysqlUrl1) throws ClassNotFoundException, SQLException, IOException {
+        super.excel(mysqlUrl1);
     }
+
+    @Override
+    public void drop(String a) throws SQLException {
+        super.drop(a);
+    }
+
 }
