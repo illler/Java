@@ -4,7 +4,6 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.*;
@@ -39,16 +38,13 @@ abstract class Exc_all{
         System.out.println();
     }
 
-    public abstract void drop() throws SQLException;
 
-    public void excel() throws ClassNotFoundException, SQLException, IOException {
+    public void excel(String mysqlUrl1) throws ClassNotFoundException, SQLException, IOException {
         try {
         String filename = "" + getName_table() + ".xls";
         HSSFWorkbook hwb = new HSSFWorkbook();
         HSSFSheet sheet = hwb.createSheet("new_sheet");
-        HSSFRow row_head = sheet.createRow(0);
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-        String mysqlUrl1 = "jdbc:mysql://localhost/Exc6";
         Connection con = DriverManager.getConnection(mysqlUrl1, "root", Config.getPassword());
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery("Select * from " + getName_table());
