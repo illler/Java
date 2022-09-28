@@ -145,14 +145,13 @@ public class Exc_4 extends Exc_all implements get_set{
     }
 
     @Override
-    public void drop() throws SQLException {
-        String mysqlUrl1 = "jdbc:mysql://localhost/Exc4";
-        super.drop(mysqlUrl1);
+    public void drop(String a) throws SQLException {
+        super.drop(a);
     }
 
     @Override
-    public void excel() throws ClassNotFoundException, SQLException, IOException {
-        super.excel();
+    public void excel(String url) throws ClassNotFoundException, SQLException, IOException {
+        super.excel(url);
     }
 
     private String str2;
