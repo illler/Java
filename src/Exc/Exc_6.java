@@ -122,9 +122,9 @@ public class Exc_6 extends Exc_all implements value {
     private void print_sql(ResultSet rs2) throws SQLException {
         while (rs2.next()) {
             System.out.println("Матрица 1");
-            System.out.println(Arrays.toString(rs2.getString(1).split("  ")));
+            System.out.println(Arrays.toString(rs2.getString(1).split(" ")));
             System.out.println("Матрица 2");
-            System.out.println(Arrays.toString(rs2.getString(2).split("  ")));
+            System.out.println(Arrays.toString(rs2.getString(2).split(" ")));
             System.out.println();
             System.out.println("----------------------------------------------------------------------------------------");
 
@@ -133,26 +133,25 @@ public class Exc_6 extends Exc_all implements value {
     private void print_sql_2(ResultSet rs2) throws SQLException {
         while (rs2.next()) {
             System.out.println("Матрица 1");
-            System.out.println(Arrays.toString(rs2.getString(1).split("  ")));
+            System.out.println(Arrays.toString(rs2.getString(1).split(" ")));
             System.out.println("Матрица 2");
-            System.out.println(Arrays.toString(rs2.getString(2).split("  ")));
+            System.out.println(Arrays.toString(rs2.getString(2).split(" ")));
             System.out.println();
             System.out.println("Умноженные");
-            System.out.print(Arrays.toString(rs2.getString(3).split("  ")));
+            System.out.print(Arrays.toString(rs2.getString(3).split(" ")));
             System.out.println();
             System.out.println("---------------------------------------------------------------------------------------");
         }
     }
 
     @Override
-    public void drop() throws SQLException {
-        String mysqlUrl1 = "jdbc:mysql://localhost/Exc6";
-        super.drop(mysqlUrl1);
+    public void drop(String a) throws SQLException {
+        super.drop(a);
     }
 
     @Override
-    public void excel() throws ClassNotFoundException, SQLException, IOException {
-        super.excel();
+    public void excel(String url) throws ClassNotFoundException, SQLException, IOException {
+        super.excel(url);
     }
 
     @Override
