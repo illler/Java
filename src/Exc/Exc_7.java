@@ -59,24 +59,22 @@ public class Exc_7 extends Exc_all{
         ResultSet rs = statement.executeQuery("select * from " + getName_table());
         while (rs.next()){
             System.out.println("Одномерный массив");
-            System.out.println(Arrays.toString(rs.getString(1).split("  ")));
+            System.out.println(Arrays.toString(rs.getString(1).split(" ")));
             System.out.println();
             System.out.println("Отсортированный одномнрный массив");
-            System.out.println(Arrays.toString(rs.getString(2).split("  ")));
+            System.out.println(Arrays.toString(rs.getString(2).split(" ")));
             System.out.println("---------------------------------------------------------------------------------------");
         }
     }
 
 
-
     @Override
-    public void drop() throws SQLException {
-        String mysqlUrl1 = "jdbc:mysql://localhost/Exc7";
-        super.drop(mysqlUrl1);
+    public void drop(String a) throws SQLException {
+        super.drop(a);
     }
 
     @Override
-    public void excel() throws ClassNotFoundException, SQLException, IOException {
-        super.excel();
+    public void excel(String url) throws ClassNotFoundException, SQLException, IOException {
+        super.excel(url);
     }
 }
