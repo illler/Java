@@ -1,5 +1,6 @@
 package Exc;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.Arrays;
 
@@ -19,10 +20,6 @@ class Exc_1 extends Exc_all{
         super.sql_show(a);
     }
 
-    @Override
-    public void drop() throws SQLException {
-
-    }
 
     @Override
     public void sql_create() throws SQLException{
@@ -68,27 +65,7 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
-        while (rs2.next()){
-            if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "         ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("byte")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("float")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "         ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }
-        }
+        show_result(rs2);
         sc.nextLine();
     }
 
@@ -122,27 +99,7 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
-        while (rs2.next()){
-            if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "         ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("byte")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("float")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "         ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }
-        }
+        show_result(rs2);
         sc.nextLine();
     }
 
@@ -176,27 +133,7 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
-        while (rs2.next()){
-            if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "         ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("byte")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("float")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "         ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }
-        }
+        show_result(rs2);
         sc.nextLine();
     }
 
@@ -230,27 +167,7 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
-        while (rs2.next()){
-            if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "         ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("byte")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("float")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "         ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }
-        }
+        show_result(rs2);
         sc.nextLine();
     }
     public void exc_1_5() throws SQLException{
@@ -283,27 +200,7 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
-        while (rs2.next()){
-            if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "         ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("byte")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("float")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "         ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }
-        }
+        show_result(rs2);
         sc.nextLine();
     }
 
@@ -337,27 +234,7 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
-        while (rs2.next()){
-            if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "         ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("byte")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "            ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }else if (Arrays.toString(rs2.getString(1).split(" ")).contains("float")){
-                System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "         ");
-                System.out.print(Arrays.toString(rs2.getString(2).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(3).split(" ")) + "          ");
-                System.out.print(Arrays.toString(rs2.getString(4).split(" ")) + "      ");
-                System.out.println();
-            }
-        }
+        show_result(rs2);
         sc.nextLine();
     }
 
@@ -391,6 +268,21 @@ class Exc_1 extends Exc_all{
         ResultSet rs2 = statement2.executeQuery("SELECT * FROM " + getName_table() + "");
         System.out.println("Структура таблицы");
         System.out.println("Тип данных | первое число | второе число | Финал операции");
+        show_result(rs2);
+        sc.nextLine();
+    }
+
+    @Override
+    public void excel(String mysqlUrl1) throws ClassNotFoundException, SQLException, IOException {
+        super.excel(mysqlUrl1);
+    }
+
+    @Override
+    public void drop(String a) throws SQLException {
+        super.drop(a);
+    }
+
+    private void show_result(ResultSet rs2) throws SQLException{
         while (rs2.next()){
             if (Arrays.toString(rs2.getString(1).split(" ")).contains("int")) {
                 System.out.print(Arrays.toString(rs2.getString(1).split(" ")) + "           ");
@@ -412,6 +304,5 @@ class Exc_1 extends Exc_all{
                 System.out.println();
             }
         }
-        sc.nextLine();
     }
 }
