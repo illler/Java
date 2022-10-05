@@ -1,36 +1,23 @@
 package Exc;
 
+import lombok.Data;
+
 import java.io.IOException;
-import java.io.ObjectInputFilter;
 import java.sql.*;
 import java.util.Arrays;
 
+
+@Data
 abstract class Exc_8 extends Exc_all{
 
     private String name;
     private int age;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
-
+@Data
 class Worker extends Exc_8{
 
+    private double salary;
     private final Connection con;
-
     Worker() throws SQLException{
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         String mysqlUrl1 = "jdbc:mysql://localhost/Exc8";
@@ -67,16 +54,6 @@ class Worker extends Exc_8{
         }
         System.out.println();
     }
-    private double salary;
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
     public void section() throws SQLException{
         System.out.print("Введите имя сотрудника: ");
         setName(sc.nextLine());
