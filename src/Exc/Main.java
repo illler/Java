@@ -8,7 +8,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
+        System.out.println("Выберите задачу от 1 до 8 или 9, что бы закончить выполнение программы.");
         String ans = sc.next();
 
         while (!ans.equals("9")){
@@ -61,7 +61,7 @@ public class Main {
                             case 11 -> e1.excel("jdbc:mysql://localhost/Exc1");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 2 -> {
@@ -103,7 +103,7 @@ public class Main {
                             case 8 -> e2.excel("jdbc:mysql://localhost/Exc2");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 3 -> {
@@ -136,7 +136,7 @@ public class Main {
                             case 5 -> e3.excel("jdbc:mysql://localhost/Exc3");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 4 ->{
@@ -173,7 +173,7 @@ public class Main {
                             case 8 -> e4.drop("jdbc:mysql://localhost/Exc4");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 5 -> {
@@ -206,7 +206,7 @@ public class Main {
                             case 6 -> exc_5.drop("jdbc:mysql://localhost/Exc5");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 6 ->{
@@ -238,7 +238,7 @@ public class Main {
                             case 6 -> exc_6.drop("jdbc:mysql://localhost/Exc6");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 7 -> {
@@ -269,7 +269,7 @@ public class Main {
                             case 5 -> exc_7.excel("jdbc:mysql://localhost/Exc7");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
                 case 8 -> {
@@ -300,7 +300,7 @@ public class Main {
                             case 5 -> exc_8.excel("jdbc:mysql://localhost/Exc8");
                         }
                     }
-                    System.out.println("Выберите задачу от 1 до 7. Или 8, что бы закончить выполнение программы.");
+                    System.out.println("Выберите задачу от 1 до 8. Или 9, что бы закончить выполнение программы.");
                     ans = sc.next();
                 }
             }
