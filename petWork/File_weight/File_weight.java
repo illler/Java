@@ -1,3 +1,5 @@
+package File_weight;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +12,7 @@ import java.util.Scanner;
 public class File_weight {
     public static void main(String[] args) throws IOException {
         try {
-            System.out.println("Введите путь к папке");
+            System.out.println("Р’РІРµРґРёС‚Рµ РїСѓС‚СЊ Рє РїР°РїРєРµ");
             Scanner sc = new Scanner(System.in);
             String path = sc.nextLine();
             Path directory = Paths.get(path);
@@ -26,16 +28,16 @@ public class File_weight {
                     s++;
                 }
                 if (s == 0) {
-                    string = "байт";
+                    string = "Р±Р°Р№С‚";
                 }
                 if (s == 1) {
-                    string = "килобaйт";
+                    string = "РєРёР»РѕР±aР№С‚";
                 }
                 if (s == 2) {
-                    string = "мегабaйт";
+                    string = "РјРµРіР°Р±aР№С‚";
                 }
                 if (s == 3) {
-                    string = "гигабaйт";
+                    string = "РіРёРіР°Р±aР№С‚";
                 }
                 System.out.println(i + " " + string);
             });
