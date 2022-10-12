@@ -10,11 +10,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class File_weight {
+
+    public static String ans;
     public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите путь к папке");
+        find_weight(sc.nextLine());
+    }
+    public static String find_weight(String path){
         try {
-            System.out.println("Введите путь к папке");
-            Scanner sc = new Scanner(System.in);
-            String path = sc.nextLine();
             Path directory = Paths.get(path);
             List<Integer> list = new ArrayList<>();
             Files.walk(directory).map(Path::toFile).filter(File::isFile).forEach(file -> list.add((int) file.length()));
@@ -39,11 +43,12 @@ public class File_weight {
                 if (s == 3) {
                     string = "гигабaйт";
                 }
-                System.out.println(i + " " + string);
+                ans = i + " " + string;
             });
         }catch (Exception e){
             System.out.println("stack trace");
         }
+        return ans;
     }
 }
 
