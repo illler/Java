@@ -1,4 +1,4 @@
-package Exc;
+
 
 import com.mysql.cj.jdbc.Driver;
 
@@ -12,7 +12,7 @@ public class Exc8_2 extends Exc_all{
     public void sql() throws SQLException {
         DriverManager.registerDriver(new Driver());
         String mysqlUrl = "jdbc:mysql://localhost/kursovaya";
-        Connection con = DriverManager.getConnection(mysqlUrl, "root", "16213026_Ai");
+        Connection con = DriverManager.getConnection(mysqlUrl, "root", Config.getPassword());
         System.out.println("Connection successfully");
         String tablename = "all_data";
         String query = "SELECT * FROM " + tablename;
@@ -36,7 +36,8 @@ public class Exc8_2 extends Exc_all{
         }
     }
 
-    public void approximate_date(ArrayList<String[]> b){
+    public void approximate_date(ArrayList<String[]> b) throws SQLException {
+        sql();
         System.out.print("Enter a code post: ");
         String post_code = sc.next();
         System.out.print("Enter date (format Y-m-d): ");
