@@ -1,5 +1,8 @@
-package Exc;
 
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.*;
@@ -8,6 +11,7 @@ import java.util.Arrays;
 class Exc_2 extends Exc_all{
 
     private final Connection con;
+    Logger logger = LogManager.getRootLogger();
 
     Exc_2() throws SQLException{
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
@@ -37,6 +41,7 @@ class Exc_2 extends Exc_all{
     }
 
     public void exc_2_insert() throws SQLException{
+        try {
         System.out.println("Введите 2 строки");
         setStr(sc.nextLine());
         setStr1(sc.nextLine());
@@ -57,6 +62,10 @@ class Exc_2 extends Exc_all{
             System.out.print(Arrays.toString(rs2.getString(1).split(" ")));
             System.out.print(Arrays.toString(rs2.getString(2).split(" ")));
             System.out.println();
+            }
+        }catch (SQLException ex){
+            ex.printStackTrace();
+            logger.error(ex.toString());
         }
     }
 
