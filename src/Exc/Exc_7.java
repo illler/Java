@@ -1,4 +1,4 @@
-package Exc;
+
 
 import java.io.IOException;
 import java.sql.*;
@@ -61,7 +61,7 @@ public class Exc_7 extends Exc_all{
             System.out.println("Одномерный массив");
             System.out.println(Arrays.toString(rs.getString(1).split("  ")));
             System.out.println();
-            System.out.println("Отсортированный одномнрный массив");
+            System.out.println("Отсортированный одномерный массив");
             System.out.println(Arrays.toString(rs.getString(2).split("  ")));
             System.out.println("---------------------------------------------------------------------------------------");
         }
