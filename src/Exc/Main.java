@@ -1,5 +1,5 @@
-package Exc;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -8,15 +8,17 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
+        Logger logger = LogManager.getRootLogger();
+
         System.out.println("Выберите задачу от 1 до 8 или 9, что бы закончить выполнение программы.");
         String ans = sc.next();
-
         while (!ans.equals("9")){
             try {
                 Integer.parseInt(ans);
             }
             catch (Exception e){
                 System.out.println("Введите число.");
+                logger.error("Введено не число");
             }
 
             switch (Integer.parseInt(ans)){
@@ -45,6 +47,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         }catch (NumberFormatException e){
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x){
@@ -89,6 +92,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         }catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
 
@@ -126,6 +130,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(chek);
                         }catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + chek);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x){
@@ -163,6 +168,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         }catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x){
@@ -196,6 +202,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         }catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x){
@@ -228,6 +235,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         }catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x){
@@ -259,6 +267,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         } catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x) {
@@ -290,6 +299,7 @@ public class Main {
                         try {
                             x = Integer.parseInt(check);
                         } catch (NumberFormatException e) {
+                            logger.info("Неверный формат ввода: " + check);
                             System.out.println("Неверный формат ввода");
                         }
                         switch (x) {
