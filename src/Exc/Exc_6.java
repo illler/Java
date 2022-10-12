@@ -1,4 +1,7 @@
-package Exc;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.*;
@@ -6,6 +9,7 @@ import java.util.Arrays;
 
 
 public class Exc_6 extends Exc_all {
+    Logger logger = LogManager.getRootLogger();
 
     private final Connection con;
 
@@ -55,7 +59,9 @@ public class Exc_6 extends Exc_all {
         if (a!=b) {
             System.out.println("Две матрицы можно перемножить между собой тогда и только тогда," +
                     " когда количество столбцов первой матрицы равно количеству строк второй матрицы.");
+
             section(x);
+            logger.info("Были введены некорректные значения столбцов и строк в матрицах");
         }
         StringBuilder str = new StringBuilder();
         StringBuilder str1 = new StringBuilder();
@@ -112,9 +118,9 @@ public class Exc_6 extends Exc_all {
     private void print_sql(ResultSet rs2) throws SQLException {
         while (rs2.next()) {
             System.out.println("Матрица 1");
-            System.out.println(Arrays.toString(rs2.getString(1).split(" ")));
+            System.out.println(Arrays.toString(rs2.getString("first_mat").split(" ")));
             System.out.println("Матрица 2");
-            System.out.println(Arrays.toString(rs2.getString(2).split(" ")));
+            System.out.println(Arrays.toString(rs2.getString("second_mat").split(" ")));
             System.out.println();
             System.out.println("----------------------------------------------------------------------------------------");
 
@@ -123,9 +129,9 @@ public class Exc_6 extends Exc_all {
     private void print_sql_2(ResultSet rs2) throws SQLException {
         while (rs2.next()) {
             System.out.println("Матрица 1");
-            System.out.println(Arrays.toString(rs2.getString(1).split(" ")));
+            System.out.println(Arrays.toString(rs2.getString("first_mat").split(" ")));
             System.out.println("Матрица 2");
-            System.out.println(Arrays.toString(rs2.getString(2).split(" ")));
+            System.out.println(Arrays.toString(rs2.getString("second_mat").split(" ")));
             System.out.println();
             System.out.println("Умноженные");
             System.out.print(Arrays.toString(rs2.getString(3).split(" ")));
