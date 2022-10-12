@@ -1,25 +1,29 @@
-package Exc;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 
 
-interface get_set{
+interface get_set {
 
     String getStr2();
+
     void setStr2(String a);
 
     String getStr3();
+
     void setStr3(String a);
 
 }
 
-public class Exc_4 extends Exc_all implements get_set{
+public class Exc_4 extends Exc_all implements get_set {
 
     private final Connection con;
+    Logger logger = LogManager.getRootLogger();
 
-    Exc_4() throws SQLException{
+    Exc_4() throws SQLException {
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         String mysqlUrl1 = "jdbc:mysql://localhost/Exc4";
         con = DriverManager.getConnection(mysqlUrl1, "root", Config.getPassword());
@@ -34,7 +38,7 @@ public class Exc_4 extends Exc_all implements get_set{
     }
 
     @Override
-    public void sql_create() throws SQLException{
+    public void sql_create() throws SQLException {
         Statement statement1 = con.createStatement();
         String query = "CREATE TABLE IF NOT EXISTS " + getName_table() + " (first_str varchar(255), second_str varchar(255)," +
                 "substring varchar(255), to_lower_case varchar(255), to_upper_case varchar(255), endWith varchar(255))";
@@ -48,7 +52,7 @@ public class Exc_4 extends Exc_all implements get_set{
         System.out.println();
     }
 
-    public void print_sql(ResultSet rs2) throws SQLException{
+    public void print_sql(ResultSet rs2) throws SQLException {
         while (rs2.next()) {
             System.out.print(Arrays.toString(rs2.getString(1).split(" ")));
             System.out.print(Arrays.toString(rs2.getString(2).split(" ")));
@@ -83,16 +87,16 @@ public class Exc_4 extends Exc_all implements get_set{
         String b = getStr2();
         if (arrayList.contains(a) && arrayList.contains(b)) {
             update(x);
-        }
-        else {
+        } else {
             arrayList.add(getStr2());
             arrayList.add(getStr3());
             insert(con);
             update(x);
         }
     }
-    public void update(int x) throws  SQLException{
-        switch (x){
+
+    public void update(int x) throws SQLException {
+        switch (x) {
             case 3 -> {
                 System.out.println("Введите два индекса");
                 int a = sc.nextInt();
@@ -129,8 +133,8 @@ public class Exc_4 extends Exc_all implements get_set{
             case 6 -> {
                 System.out.print("Введите строку: ");
                 String und = sc.next();
-                System.out.println((getStr2().contains(und)) ? "Подстрока содержится в первой строке": "Подстрока не содержится в строке");
-                System.out.println((getStr3().contains(und)) ? "Подстрока содержится во второй строке": "Подстрока не содержится в строке");
+                System.out.println((getStr2().contains(und)) ? "Подстрока содержится в первой строке" : "Подстрока не содержится в строке");
+                System.out.println((getStr3().contains(und)) ? "Подстрока содержится во второй строке" : "Подстрока не содержится в строке");
                 String query = "update " + getName_table() + " set endWith = '" + (getStr2().endsWith(und) + " " +
                         getStr3().endsWith(und)) + "' WHERE first_str = ? and second_str = ?";
                 PreparedStatement statement2 = con.prepareStatement(query);
