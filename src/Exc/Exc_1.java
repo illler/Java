@@ -1,4 +1,7 @@
-package Exc;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.*;
@@ -7,6 +10,7 @@ import java.util.Arrays;
 class Exc_1 extends Exc_all{
 
     private final Connection con;
+    Logger logger = LogManager.getRootLogger();
 
     Exc_1() throws SQLException{
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
@@ -22,19 +26,23 @@ class Exc_1 extends Exc_all{
 
 
     @Override
-    public void sql_create() throws SQLException{
-        Statement statement1 = con.createStatement();
-        String query = "CREATE TABLE IF NOT EXISTS " + getName_table() + " (description varchar(255)," +
-                " number1 varchar(255), number2 varchar(255), result varchar(255))";
-        statement1.executeUpdate(query);
-        ResultSet rs1 = statement1.executeQuery("Show tables");
-        System.out.println("Таблицы из текущей бд");
-        while (rs1.next()){
-            System.out.print(rs1.getString(1));
-            System.out.println();
+    public void sql_create() throws SQLException {
+        try {
+            Statement statement1 = con.createStatement();
+            String query = "CREATE TABLE IF NOT EXISTS " + getName_table() + " (description varchar(255)," +
+                    " number1 varchar(255), number2 varchar(255), result varchar(255))";
+            statement1.executeUpdate(query);
+            ResultSet rs1 = statement1.executeQuery("Show tables");
+            System.out.println("Таблицы из текущей бд");
+            while (rs1.next()) {
+                System.out.print(rs1.getString(1));
+                System.out.println();
+            }
+        }catch (SQLException ex){
+            ex.printStackTrace();
+            logger.error(ex.toString());
         }
     }
-
     public void exc_1_1() throws SQLException{
         System.out.println("Введите два числа типа int");
         int a = sc.nextInt();
